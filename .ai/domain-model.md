@@ -55,23 +55,27 @@ each one, or log it under Decisions below.
 **- Can `message` be empty? Whitespace only? Very long?** Not empty and not only whaitespaces, at most 100 chars.
 **- What does the feed show when it's empty?** A sad face.
 
-- Does anything survive a page refresh — and if so, how?
-  
-- If a kudos references a colleague no longer in the list, what happens?
-  
-- Where does validation live, and is it in one place or several?
-  
-- How do you keep things fast as the feed grows — recompute on every render,
-  or keep a running total somewhere?
+- **Does anything survive a page refresh — and if so, how?** Yes. The browser's
+  `localStorage` keeps the client-side wall between refreshes.
+- **If a kudos references a colleague no longer in the list, what happens?**
+  The feed keeps the kudos and shows "Former colleague" for that person.
+- **Where does validation live, and is it in one place or several?** Message
+  validation lives in the domain module and the form calls that single helper.
+- **How do you keep things fast as the feed grows — recompute on every render,
+  or keep a running total somewhere?** The feed is sorted in a `useMemo` only
+  when the kudos list changes; no separate running total is needed.
+
+## Decisions
+
+- We chose to persist kudos in `localStorage` because the app has no backend and
+  losing the wall on every refresh would make the MVP difficult to use.
+- We chose to keep validation in the domain module and call it from the form,
+  so message rules have one source of truth.
+- We chose to sort a copied list with `useMemo` when the feed changes. This keeps
+  the store simple while avoiding repeated sorting during unrelated renders.
 
 ## Deliberately out of scope
 
 Authentication. A backend. A database. Notifications. Editing a sent kudos.
 Comment threads. Rich text. Image uploads. If you're building any of these,
 you've drifted.
-
-## Decisions
-
-Short entries as you build — not documentation, just the call and the reason:
-
-- We chose ___ because ___.
