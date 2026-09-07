@@ -46,14 +46,14 @@ From the brief. Build them as specified.
 - **The feed is newest first.** Always.
 - **No limit on how many kudos one person can send.**
 
+## Features
+- Display a list of collegues who have not received any kudos in the last 7 days.
+- Sort the colleagues who have received kudos according to position.
+
 ## Still open — yours to decide
 
-There's no single right answer to any of these. There is a wrong answer:
-"we never thought about it." Write your answer and reason here as you settle
-each one, or log it under Decisions below.
-
-**- Can `message` be empty? Whitespace only? Very long?** Not empty and not only whaitespaces, at most 100 chars.
-**- What does the feed show when it's empty?** A sad face.
+- **- Can `message` be empty? Whitespace only? Very long?** Not empty and not only whaitespaces, at most 100 chars.
+- **- What does the feed show when it's empty?** A sad face.
 
 - **Does anything survive a page refresh — and if so, how?** Yes. The browser's
   `localStorage` keeps the client-side wall between refreshes.

@@ -2,6 +2,7 @@ import { useMemo, useState } from 'react'
 import colleagues from '../data/colleagues.json'
 import KudosFeed from './components/KudosFeed'
 import KudosForm from './components/KudosForm'
+import RecognitionInsights from './components/RecognitionInsights'
 import type { Kudos, KudosCategory } from './domain'
 import { getStoredKudos, saveKudos } from './kudosStore'
 
@@ -48,6 +49,7 @@ function App() {
         />
         <KudosFeed kudos={sortedKudos} colleagues={colleagues} />
       </div>
+      <RecognitionInsights kudos={kudos} colleagues={colleagues} />
       <footer>Built for the team, by the team.</footer>
     </main>
   )
