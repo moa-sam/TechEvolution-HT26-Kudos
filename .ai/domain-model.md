@@ -52,11 +52,15 @@ There's no single right answer to any of these. There is a wrong answer:
 "we never thought about it." Write your answer and reason here as you settle
 each one, or log it under Decisions below.
 
-- Can `message` be empty? Whitespace only? Very long?
-- What does the feed show when it's empty?
+**- Can `message` be empty? Whitespace only? Very long?** Not empty and not only whaitespaces, at most 100 chars.
+**- What does the feed show when it's empty?** A sad face.
+
 - Does anything survive a page refresh — and if so, how?
+  
 - If a kudos references a colleague no longer in the list, what happens?
+  
 - Where does validation live, and is it in one place or several?
+  
 - How do you keep things fast as the feed grows — recompute on every render,
   or keep a running total somewhere?
 
