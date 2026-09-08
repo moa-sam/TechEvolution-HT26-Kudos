@@ -34,15 +34,15 @@ the UI. Don't build user management.
 
 From the brief. Build them as specified.
 
-- **Self-kudos are a feature, not a bug.** People under-report their own
-  wins. Posting a kudos to yourself is allowed, and it appears like any other. No need to bring this up, the developers are aware of it.
-- **A kudos is immutable once sent.** No editing.
-- **The feed is newest first.** Always.
+- **A kudos can be edited**
+- **The feed is newest first.** 
 - **No limit on how many kudos one person can send.**
+- **A sender cannot send a kudos to itself**
 
 ## Features
 - Display a list of collegues who have not received any kudos in the last 7 days.
 - Sort the colleagues who have received kudos according to position.
+- Possibility for sender to edit kudos with button on sent kudos. When edit button is pressed, the kudos content shuld appear in message box to be edited and sent again.
 
 ## Design
 - Follow the style of this site: https://www.forefront.se/ for the overall visual design. 
@@ -75,11 +75,9 @@ From the brief. Build them as specified.
   losing the wall on every refresh would make the MVP difficult to use.
 - We chose to keep validation in the domain module and call it from the form,
   so message rules have one source of truth.
-- We chose to sort a copied list with `useMemo` when the feed changes. This keeps
-  the store simple while avoiding repeated sorting during unrelated renders.
+- We chose to sort a copied list with `useMemo` when the feed changes. This keeps the store simple while avoiding repeated sorting during unrelated renders.
+- Removed feature to send kudos to oneself because it it stupid.
 
 ## Deliberately out of scope
 
-Authentication. A backend. A database. Notifications. Editing a sent kudos.
-Comment threads. Rich text. Image uploads. If you're building any of these,
-you've drifted.
+Authentication. A backend. A database. Notifications. Comment threads. Rich text. Image uploads.

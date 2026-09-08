@@ -4,16 +4,17 @@ import KudosCard from './KudosCard'
 type KudosFeedProps = {
   kudos: Kudos[]
   colleagues: Colleague[]
+  currentUserId: string
+  onEditKudos: (id: string) => void
 }
 
-function KudosFeed({ kudos, colleagues }: KudosFeedProps) {
+function KudosFeed({ kudos, colleagues, currentUserId, onEditKudos }: KudosFeedProps) {
   const colleaguesById = new Map(colleagues.map((colleague) => [colleague.id, colleague]))
 
   return (
     <section className="feed" aria-labelledby="feed-title">
       <div className="feed-heading">
         <div>
-          <p className="eyebrow">The wall</p>
           <h2 id="feed-title">Recent kudos</h2>
         </div>
         <span className="feed-count">{kudos.length} {kudos.length === 1 ? 'kudos' : 'kudos shared'}</span>
@@ -26,7 +27,15 @@ function KudosFeed({ kudos, colleagues }: KudosFeedProps) {
         </div>
       ) : (
         <div className="kudos-list">
-          {kudos.map((item) => <KudosCard key={item.id} kudos={item} colleaguesById={colleaguesById} />)}
+          {kudos.map((item) => (
+            <KudosCard
+              key={item.id}
+              kudos={item}
+              colleaguesById={colleaguesById}
+              currentUserId={currentUserId}
+              onEdit={() => onEditKudos(item.id)}
+            />
+          ))}
         </div>
       )}
     </section>

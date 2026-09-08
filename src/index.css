@@ -212,6 +212,24 @@ textarea {
   font-size: 1.1rem;
 }
 
+.secondary-button,
+.edit-button {
+  width: 100%;
+  margin-top: 12px;
+  padding: 10px 14px;
+  border: 1px solid rgba(116, 64, 89, 0.2);
+  border-radius: 999px;
+  color: var(--accent);
+  background: rgba(116, 64, 89, 0.03);
+  cursor: pointer;
+  font-weight: 700;
+}
+
+.secondary-button:hover,
+.edit-button:hover {
+  background: rgba(116, 64, 89, 0.06);
+}
+
 .form-error {
   margin: -5px 0 14px;
   color: #8f324d;
@@ -232,11 +250,31 @@ textarea {
 .kudos-list { display: grid; gap: 14px; }
 
 .kudos-card {
+  position: relative;
   padding: 20px 18px;
   border: 1px solid var(--panel-border);
   border-radius: 18px;
   background: rgba(255, 255, 255, 0.7);
   box-shadow: 0 8px 20px rgba(28, 28, 28, 0.02);
+}
+
+.kudos-card .edit-button {
+  position: absolute;
+  bottom: 14px;
+  right: 14px;
+  display: grid;
+  place-items: center;
+  width: 32px;
+  height: 32px;
+  margin-top: 0;
+  padding: 0;
+  border: 1px solid rgba(116, 64, 89, 0.18);
+  border-radius: 10px;
+  color: var(--accent);
+  background: var(--accent-soft);
+  font-size: 0.95rem;
+  line-height: 1;
+  box-shadow: none;
 }
 
 .card-topline {
