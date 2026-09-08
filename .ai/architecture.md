@@ -14,10 +14,6 @@ reads from it.
 [ Send form ] --add(kudos)--> [ kudos store ] --read(kudos[])--> [ Feed ]
 ```
 
-Everything else — validation, persistence, performance, folder layout — is
-yours to decide. See "Still open" in `.ai/domain-model.md`; don't expect an
-answer here.
-
 ## Given, not decided
 
 - **No backend.** Whatever state management you pick lives entirely on the

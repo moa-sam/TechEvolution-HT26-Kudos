@@ -35,7 +35,7 @@ function App() {
       <header className="hero">
         <div>
           <p className="eyebrow">Evolution Lab · Team appreciation</p>
-          <h1>Kudos <span>Wall</span></h1>
+          <h1>Kudos</h1>
           <p className="hero-copy">A little recognition goes a long way. Celebrate the people who make the work better.</p>
         </div>
         <div className="hero-spark" aria-hidden="true">✦</div>
