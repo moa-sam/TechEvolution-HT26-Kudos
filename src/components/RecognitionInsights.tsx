@@ -35,7 +35,6 @@ function RecognitionInsights({ kudos, colleagues }: RecognitionInsightsProps) {
       <div className="insight-panel">
         <div className="insight-heading">
           <div>
-            <p className="eyebrow">Keep it balanced</p>
             <h2>Awaiting recognition</h2>
           </div>
           <span className="insight-icon" aria-hidden="true">♡</span>
@@ -58,7 +57,6 @@ function RecognitionInsights({ kudos, colleagues }: RecognitionInsightsProps) {
       <div className="insight-panel">
         <div className="insight-heading">
           <div>
-            <p className="eyebrow">The leaderboard</p>
             <h2>Top receivers</h2>
           </div>
           <span className="insight-icon" aria-hidden="true">✦</span>

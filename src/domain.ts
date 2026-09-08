@@ -46,3 +46,11 @@ export function validateKudosMessage(message: string): string | null {
 
   return null
 }
+
+export function validateKudosRecipient(senderId: string, recipientId: string): string | null {
+  if (senderId === recipientId) {
+    return 'You cannot send kudos to yourself.'
+  }
+
+  return null
+}

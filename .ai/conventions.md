@@ -27,8 +27,6 @@ writing commits — not required reading upfront.
 Comment the **why**, never the what. `// sorted descending so newest is
 first` is noise. `// self-kudos allowed on purpose — see domain-model.md` is gold.
 
-Document what each file does in a separate .md file explaining its content and purpose.
-
 ## Working with the brief
 
 `.ai/domain-model.md` is your requirements. Build what it says — if you

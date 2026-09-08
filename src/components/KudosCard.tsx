@@ -4,15 +4,18 @@ import { categoryLabels } from '../domain'
 type KudosCardProps = {
   kudos: Kudos
   colleaguesById: Map<string, Colleague>
+  currentUserId: string
+  onEdit: () => void
 }
 
-function KudosCard({ kudos, colleaguesById }: KudosCardProps) {
+function KudosCard({ kudos, colleaguesById, currentUserId, onEdit }: KudosCardProps) {
   const sender = colleaguesById.get(kudos.from)
   const recipient = colleaguesById.get(kudos.to)
   const createdAt = new Date(kudos.createdAt).toLocaleString(undefined, {
     dateStyle: 'medium',
     timeStyle: 'short',
   })
+  const canEdit = kudos.from === currentUserId
 
   return (
     <article className="kudos-card">
@@ -26,6 +29,16 @@ function KudosCard({ kudos, colleaguesById }: KudosCardProps) {
         <span aria-hidden="true">→</span>
         <strong>{recipient?.name ?? 'Former colleague'}</strong>
       </p>
+      {canEdit && (
+        <button
+          type="button"
+          className="edit-button"
+          onClick={onEdit}
+          aria-label={`Edit kudos from ${sender?.name ?? 'colleague'}`}
+        >
+          ✎
+        </button>
+      )}
     </article>
   )
 }
