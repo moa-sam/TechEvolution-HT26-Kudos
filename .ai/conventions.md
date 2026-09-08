@@ -15,28 +15,22 @@ writing commits — not required reading upfront.
 
 - One component per file, named after the component.
 - No file over ~200 lines. If one grows past that, it is doing two jobs.
+- Organize files into folders for effecte refactoring.
 
 ## Commits
 
-Small, and in the imperative: `add category filter to feed`,
-`show self-kudos in the feed`. You'll be walking another team through this
-history tomorrow — a wall of `wip`, `fix`, `asdf` tells them nothing.
-
-Commit whenever something works. Don't save it all for one commit at 16:29.
+- Small, and in the imperative: `add category filter to feed`,
+`show self-kudos in the feed`.
 
 ## Comments
 
 Comment the **why**, never the what. `// sorted descending so newest is
-first` is noise. `// self-kudos allowed on purpose — see domain-model.md` is
-gold.
+first` is noise. `// self-kudos allowed on purpose — see domain-model.md` is gold.
+
+Document what each file does in a separate .md file explaining its content and purpose.
 
 ## Working with the brief
 
 `.ai/domain-model.md` is your requirements. Build what it says — if you
 disagree with something in it, that is a conversation to have, not a
 decision to make silently.
-
-## AI-generated code
-
-Same bar as anything else. If you cannot explain a line, it does not go in —
-because tomorrow somebody will point at it and ask.

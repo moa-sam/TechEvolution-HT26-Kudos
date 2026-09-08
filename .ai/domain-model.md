@@ -1,11 +1,5 @@
 # Domain model
 
-Required reading before you write a line of code — see `docs/01-build.md`.
-
-Living document. When you decide something — especially answers to "Still
-open" below — write it here. An outdated file lies to the next reader and to
-their AI tool.
-
 ## The entity
 
 The whole app is one entity. A Kudos is a short, public, positive message
@@ -50,10 +44,20 @@ From the brief. Build them as specified.
 - Display a list of collegues who have not received any kudos in the last 7 days.
 - Sort the colleagues who have received kudos according to position.
 
+## Design
+- Follow the style of this site: https://www.forefront.se/ for the overall visual design. 
+- Colour: #744059
+- Font: Google fonts DM Sans
+- Button color: rgb(116, 64, 89)
+- Font-size 1rem /16px (non headings)
+- All headings: Manrope google fonts
+- Use onstraints for textboxes to avoid unneccesary extentions.
+- Use margins in design components.
+
 ## Still open — yours to decide
 
-- **- Can `message` be empty? Whitespace only? Very long?** Not empty and not only whaitespaces, at most 100 chars.
-- **- What does the feed show when it's empty?** A sad face.
+- **Can `message` be empty? Whitespace only? Very long?** Not empty and not only whaitespaces, at most 100 chars.
+- **What does the feed show when it's empty?** A sad face.
 
 - **Does anything survive a page refresh — and if so, how?** Yes. The browser's
   `localStorage` keeps the client-side wall between refreshes.
@@ -61,7 +65,7 @@ From the brief. Build them as specified.
   The feed keeps the kudos and shows "Former colleague" for that person.
 - **Where does validation live, and is it in one place or several?** Message
   validation lives in the domain module and the form calls that single helper.
-- **How do you keep things fast as the feed grows — recompute on every render,
+- **How do you keep things fast as the feed grows** recompute on every render,
   or keep a running total somewhere?** The feed is sorted in a `useMemo` only
   when the kudos list changes; no separate running total is needed.
 
